@@ -17,9 +17,6 @@ for row in rows:
 	if(row[3] > 300): # 5 minutes in game considers as active
 		monthsActive[convertDate(row[1]) - 1] += row[2]
 
-for i in range(len(monthsActive)):
-	print(i + 1, monthsActive[i])
-
 months = [i for i in range(1,13)]
 
 plt.plot(months, monthsActive)
