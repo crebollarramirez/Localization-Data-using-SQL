@@ -1,6 +1,4 @@
 import sqlite3
-import matplotlib.pyplot as plt
-import numpy as np
 
 class Account():
     def __init__(self, country):
@@ -52,14 +50,13 @@ for row in rows:
     accounts[row[0]].addPurchase(row[3])
 
 f = open("outputRevenueInfo.txt", "w")
-
 total = 0
 for revenue in revenuePerCountry.values():
     total += revenue
 
 f.write("Geographic Split of the Revenue and the Users\n---------------------------------------------\n")
 for info in revenuePerCountry.items():
-        f.write(str(info[0]) + " " + str(round(info[1]/total * 100, 3)) + "%\n")
+    f.write(str(info[0]) + " " + str(round(info[1]/total * 100, 3)) + "%\n")
 
 f.close()
 
